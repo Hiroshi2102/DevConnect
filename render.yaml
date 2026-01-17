@@ -33,15 +33,4 @@ services:
       - key: CORS_ORIGINS
         sync: false
 
-  # Frontend Static Site
-  - type: static
-    name: devconnect-frontend
-    runtime: static
-    buildCommand: cd frontend && npm install && npm run build
-    publishDir: frontend/build
-    envVars:
-      - key: REACT_APP_BACKEND_URL
-        fromService:
-          type: web
-          name: devconnect-backend
-          property: url
+
