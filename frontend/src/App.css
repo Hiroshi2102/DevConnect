@@ -1,0 +1,140 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a0a0a 0%, #0f1419 100%);
+}
+
+/* Glassmorphism effect */
+.glass-card {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Button animations */
+.btn-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Trophy animation */
+@keyframes trophy-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.trophy-icon:hover {
+  animation: trophy-bounce 0.5s ease;
+}
+
+/* Points badge pulse */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.points-badge {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+/* Hero gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Navigation active indicator */
+.nav-active {
+  position: relative;
+}
+
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0ea5e9, #14b8a6);
+}
+
+/* Chat bubble */
+.chat-bubble {
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat-bubble-sent {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0c7fb9 100%);
+}
+
+.chat-bubble-received {
+  background: rgba(42, 42, 42, 0.8);
+}
+
+/* AI Chatbot widget */
+.chatbot-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+}
+
+.chatbot-bubble {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chatbot-bubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+}
+
+/* Rank badges */
+.rank-beginner { @apply bg-gray-700 text-gray-300; }
+.rank-intermediate { @apply bg-blue-700 text-blue-200; }
+.rank-pro { @apply bg-purple-700 text-purple-200; }
+.rank-expert { @apply bg-orange-700 text-orange-200; }
+.rank-legend { @apply bg-yellow-600 text-yellow-100; }
